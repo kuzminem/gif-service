@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+
+  app:
+    image: bellsoft/liberica-openjdk-alpine:latest
+    container_name: app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./build/libs:/app
+    command: [ "java", "-jar", "/app/gif-service-1.0.jar" ]
